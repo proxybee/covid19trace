@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        JavaScript DOM Test
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<h1 class="app-title">COVID-19 Incoming Patients Tracker</h1>
+	<hr>
+			<div class="patient-form">
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <h2>Enter Patient's Details</h2>
+                    <p class="validation-error hide" id="nameValidationError">Fields with * are required, fill all required fields...</p>
+                    <p class="deleted-note hide" id="deletedNote">Record Deleted...</p>
+                    <div>
+                        <label>First Name:*</label>
+                        <input type="text" name="fName" id="fName">
+                    </div>
+                    <div>
+                        <label>Last Name:*</label>
+                        <input type="text" name="lName" id="lName">
+                    </div>
+                    <div>
+                        <label>Email Address:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div>
+                        <label>Gender:*</label>
+                        <select type="select" name="gender" id="gender">
+                            <option value="">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="yes" value="No" id="box">      
+                        <label class= checkLabel>Recently came into Nigeria within the last 14 days</label> 
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+		</div>
+		<br/>
+		<div class = "patients-table hide">
+                <table class="list" id="patientList">
+                    <thead>
+                        <tr>
+                            <th style="width:30%">Name</th>
+                            <th style="width:25%">Email Address</th>
+                            <th style="width:10%">Gender</th>
+                            <th style="width:15%">Came to Nigeria within the last 14 days</th>
+                            <th style="width:7%"></th>
+                            <th style="width:7%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+        </div>
+    <script src="index.js"></script>
+</body>
+</html>
