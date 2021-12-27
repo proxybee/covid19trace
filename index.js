@@ -17,6 +17,16 @@ function check () {
     }
    return checkB.value= "No"
 }
+
+function checkupdate (boxV) {
+    let checkB = document.getElementById("box")
+    console.log(boxV)
+    if(boxV == "Yes"){
+       return checkB.checked = true
+    }
+   return checkB.checked = false
+}
+
 function readFormData() {
     var formData = {};
     formData["fName"] = document.getElementById("fName").value;
@@ -51,8 +61,8 @@ function resetForm() {
     document.getElementById("lName").value = "";
     document.getElementById("email").value = "";
     document.getElementById("gender").value = "";
-    document.getElementById("box").value ="";
-    console.log(selectedRow = null);
+   let checkB = document.getElementById("box").checked = false
+    selectedRow = null
 }
 
 function resetTab() {
@@ -69,7 +79,8 @@ function onEdit(td) {
     document.getElementById("lName").value = fullBreak[1];
     document.getElementById("email").value = selectedRow.cells[1].innerHTML;
     document.getElementById("gender").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("box").value = selectedRow.cells[3].innerHTML;
+    let boxV = selectedRow.cells[3].innerHTML;
+    document.getElementById("box").value = checkupdate(boxV);
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullName;
